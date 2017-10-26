@@ -4,6 +4,12 @@ import './App.css';
 import Log from './components/Log';
 
 class App extends Component {
+  constructor(){
+    this.state = { mode: undefined } ;
+  }
+  componentWillMount() {
+    
+  }
   render() {
     return (
       <div className="App">
