@@ -18,7 +18,7 @@ class App extends Component {
     FB.getLoginStatus(this.setloginstatus.bind(this));
   }
   render() {
-    if(this.state.mode === 'connected '){
+    if(this.state.mode === 'connected'){
       return(
             <Loggedin/>
       );
