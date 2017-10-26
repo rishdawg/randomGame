@@ -4,11 +4,14 @@ import './App.css';
 import Log from './components/Log';
 
 class App extends Component {
-  constructor(){
+  constructor(props){
+    super(props);
     this.state = { mode: undefined } ;
   }
   componentWillMount() {
-    
+    FB.getLoginStatus(function(response) {
+    this.setState({ mode: response.status})
+      });
   }
   render() {
     return (
@@ -20,7 +23,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Log/>
+        <p>{this.state.mode}</p>
       </div>
     );
   }
