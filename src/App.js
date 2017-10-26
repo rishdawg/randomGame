@@ -10,10 +10,11 @@ class App extends Component {
     super(props);
     this.state = { mode: undefined } ;
   }
+   setloginstatus(response){
+     this.setState({mode: response.status})
+   }
   componentWillMount() {
-    FB.getLoginStatus(function(response) {
-    this.setState({ mode: response.status})
-      });
+    FB.getLoginStatus(this.setloginstatus.bind(this));
   }
   render() {
     return (
