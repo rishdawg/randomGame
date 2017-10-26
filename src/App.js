@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Log from './components/Log';
 
+const FB = window.FB;
+
 class App extends Component {
   constructor(props){
     super(props);
